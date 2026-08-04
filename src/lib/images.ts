@@ -41,10 +41,15 @@ const registry: Record<string, Variants> = {
 };
 
 function keyOf(src: string) {
-  const file = src.split("/").pop() ?? src;
-  return file.replace(/-[A-Za-z0-9_-]{6,}(?=\.[a-z]+$)/i, "").replace(/\.[a-z]+$/i, "");
+  const file = (src.split("?")[0] ?? src).split("/").pop() ?? src;
+  const base = file.replace(/\.[a-z]+$/i, "");
+  // combina com o nome cadastrado, ignorando o hash do bundler (ex.: advogado-BX12aZ)
+  return (
+    Object.keys(registry).find((k) => base === k || base.startsWith(`${k}-`)) ?? base
+  );
 }
 
 export function imageSources(src: string): Partial<Variants> {
   return registry[keyOf(src)] ?? {};
 }
+
