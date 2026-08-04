@@ -160,6 +160,81 @@ export const artigos: Artigo[] = [
       },
     ],
   },
+  {
+    slug: "adicional-de-insalubridade",
+    titulo: "Insalubridade: você pode estar trabalhando em condições prejudiciais à saúde e nem saber",
+    resumo:
+      "Entenda o que caracteriza um ambiente insalubre, como é calculado o adicional e como provar o direito na Justiça do Trabalho.",
+    categoria: "Insalubridade",
+    data: "2026-07-30",
+    dataLabel: "30 de julho de 2026",
+    leitura: 8,
+    imagem: insalubridade,
+    secoes: [
+      {
+        id: "introducao",
+        titulo: "Muitos trabalhadores desconhecem o direito",
+        paragrafos: [
+          "Muitos trabalhadores acreditam que apenas quem trabalha em hospitais ou com produtos químicos perigosos tem direito ao adicional de insalubridade. A realidade é diferente.",
+          "A insalubridade ocorre quando o trabalhador exerce suas atividades exposto a agentes que podem causar danos à sua saúde acima dos limites permitidos pela legislação. Esses agentes podem ser físicos, químicos ou biológicos.",
+        ],
+        citacao:
+          "A insalubridade não depende da vontade da empresa, mas da realidade das condições de trabalho enfrentadas pelo empregado.",
+      },
+      {
+        id: "o-que-caracteriza",
+        titulo: "O que pode caracterizar um ambiente insalubre?",
+        paragrafos: [
+          "Alguns exemplos de situações que podem indicar insalubridade são:",
+          "• Exposição constante a produtos químicos.\n• Contato com lixo, esgoto ou materiais contaminados.\n• Trabalho em ambientes com muito ruído.\n• Exposição excessiva ao calor ou ao frio.\n• Poeiras, fumos, vapores e gases nocivos.\n• Contato frequente com vírus, bactérias ou outros agentes biológicos.",
+          "Essas situações não garantem automaticamente o direito ao adicional, mas podem indicar que existe um direito que merece ser analisado.",
+        ],
+      },
+      {
+        id: "como-funciona",
+        titulo: "Como funciona o adicional de insalubridade?",
+        paragrafos: [
+          "Quando comprovada a exposição aos agentes nocivos, o trabalhador pode ter direito ao adicional de insalubridade, que pode ser de:",
+          "• 10% (grau mínimo);\n• 20% (grau médio);\n• 40% (grau máximo).",
+          "O percentual depende da intensidade do risco e é definido por meio de uma perícia técnica realizada durante o processo judicial, quando necessário.",
+        ],
+      },
+      {
+        id: "epis",
+        titulo: "E se a empresa fornecer EPIs?",
+        paragrafos: [
+          "O simples fornecimento de Equipamentos de Proteção Individual (EPIs) não elimina automaticamente o direito ao adicional.",
+          "É necessário verificar se os equipamentos eram adequados para o risco, entregues regularmente, utilizados corretamente e capazes de eliminar ou neutralizar totalmente o agente nocivo.",
+          "Cada caso precisa ser analisado individualmente.",
+        ],
+      },
+      {
+        id: "prazo",
+        titulo: "Trabalhei nessas condições e nunca recebi. Ainda posso cobrar?",
+        paragrafos: [
+          "Em muitos casos, sim. O trabalhador pode buscar judicialmente o reconhecimento do direito ao adicional de insalubridade e o pagamento dos valores que deixaram de ser pagos, observados os prazos previstos na legislação trabalhista.",
+          "Além do adicional, o reconhecimento da insalubridade pode gerar reflexos em outras verbas trabalhistas, como férias acrescidas de um terço, 13º salário, FGTS e horas extras, quando aplicável.",
+        ],
+      },
+      {
+        id: "provas",
+        titulo: "Como provar a insalubridade?",
+        paragrafos: [
+          "Algumas provas importantes são:",
+          "• Carteira de Trabalho (CTPS);\n• Contracheques;\n• Fotos e vídeos do ambiente de trabalho;\n• Conversas que demonstrem as atividades realizadas;\n• Documentos fornecidos pela empresa;\n• Testemunhas que trabalharam no mesmo local.",
+          "Na maioria das ações, também é realizada uma perícia técnica para verificar as condições reais do ambiente de trabalho.",
+        ],
+      },
+      {
+        id: "advogado",
+        titulo: "Quando procurar um advogado?",
+        paragrafos: [
+          "Se você trabalha ou trabalhou em um ambiente que coloca sua saúde em risco e nunca recebeu adicional de insalubridade, é recomendável procurar um advogado especializado em Direito do Trabalho para analisar seu caso.",
+          "Cada situação possui características próprias, e somente uma análise individual poderá indicar se há direito ao adicional e às demais verbas decorrentes.",
+        ],
+      },
+    ],
+  },
 ];
 
 export const getArtigo = (slug: string) => artigos.find((a) => a.slug === slug);
