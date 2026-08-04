@@ -2,12 +2,12 @@ export const site = {
   lawyer: "Dr. Celso Menocci Junior",
   office: "Menocci Junior Advocacia",
   city: "Jales/SP",
-  address: "Av. Francisco Jalles, Centro — Jales/SP",
-  phoneDisplay: "(17) 99999-9999",
-  whatsappNumber: "5517999999999",
-  instagram: "https://instagram.com/",
+  address: "R. Quatro, 2055 - Jardim Ana Cristina, Jales - SP, 15700-058",
+  phoneDisplay: "(17) 99765-3307",
+  whatsappNumber: "5517997653307",
+  instagram: "https://www.instagram.com/celsomenoccijunior/",
   mapsEmbed:
-    "https://www.google.com/maps?q=Jales,SP,Brasil&output=embed",
+    "https://www.google.com/maps?q=R.+Quatro,+2055+-+Jardim+Ana+Cristina,+Jales+-+SP,+15700-058&output=embed",
 };
 
 export const whatsappLink = (
