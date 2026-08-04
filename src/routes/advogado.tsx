@@ -97,8 +97,8 @@ function Advogado() {
             <img
               src={advogado}
               alt="Retrato profissional do Dr. Celso Menocci Junior"
-              width={165}
-              height={220}
+              width={1016}
+              height={2040}
               className="relative w-full object-cover"
             />
           </div>
@@ -178,8 +178,8 @@ function Advogado() {
               <img
                 src={advogadoRetrato}
                 alt="Dr. Celso Menocci Junior no escritório de advocacia em Jales"
-                width={165}
-                height={220}
+                width={1528}
+                height={2040}
                 loading="lazy"
                 className="relative aspect-[4/5] w-full object-cover"
               />
