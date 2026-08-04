@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Clock3, MessageCircle } from "lucide-react";
-import { artigos, getArtigo } from "@/data/artigos";
+import { artigos, getArtigo, type Artigo } from "@/data/artigos";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -65,7 +65,7 @@ export const Route = createFileRoute("/publicacoes/$slug")({
 });
 
 function ArtigoPage() {
-  const { artigo } = Route.useLoaderData();
+  const { artigo } = Route.useLoaderData() as { artigo: Artigo };
   const relacionados = artigos.filter((a) => a.slug !== artigo.slug).slice(0, 2);
 
   return (
