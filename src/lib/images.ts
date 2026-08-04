@@ -45,7 +45,9 @@ function keyOf(src: string) {
   const base = file.replace(/\.[a-z]+$/i, "");
   // combina com o nome cadastrado, ignorando o hash do bundler (ex.: advogado-BX12aZ)
   return (
-    Object.keys(registry).find((k) => base === k || base.startsWith(`${k}-`)) ?? base
+    Object.keys(registry)
+      .sort((a, b) => b.length - a.length)
+      .find((k) => base === k || base.startsWith(`${k}-`)) ?? base
   );
 }
 
