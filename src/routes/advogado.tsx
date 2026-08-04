@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CalendarCheck } from "lucide-react";
 import advogado from "@/assets/advogado.jpg";
+import advogadoRetrato from "@/assets/advogado-retrato.jpg";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -172,7 +173,19 @@ function Advogado() {
                 <li key={f} className="border-l border-gold pl-5">{f}</li>
               ))}
             </ul>
+            <div className="relative mt-10">
+              <div className="absolute -bottom-3 -left-3 hidden h-full w-full border border-gold-soft md:block" />
+              <img
+                src={advogadoRetrato}
+                alt="Dr. Celso Menocci Junior no escritório de advocacia em Jales"
+                width={1024}
+                height={1280}
+                loading="lazy"
+                className="relative aspect-[4/5] w-full object-cover"
+              />
+            </div>
           </div>
+
           <div className="space-y-10">
             <div className="border border-border bg-background p-8">
               <p className="eyebrow">Missão</p>
