@@ -10,7 +10,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
         <span key={item.label} className="inline-flex items-center gap-2">
           {i > 0 && <ChevronRight className="size-3" strokeWidth={1.5} />}
           {item.to ? (
-            <Link to={item.to} className="hover:text-foreground">
+            <Link to={item.to as "/"} className="hover:text-foreground">
               {item.label}
             </Link>
           ) : (
