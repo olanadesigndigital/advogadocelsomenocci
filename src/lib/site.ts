@@ -11,5 +11,5 @@ export const site = {
 };
 
 export const whatsappLink = (
-  message = "Olá, Dr. Celso. Gostaria de tirar uma dúvida trabalhista.",
+  message = "Olá! Vim pelo seu site e gostaria de solicitar uma análise do meu caso trabalhista.\n\nSegue algumas informações iniciais:\n\n👤 Nome:\n🏢 Empresa:\n💼 Cargo/Função:\n📅 Período trabalhado:\n⚠️ Resumo da situação:\n\nGostaria de saber se tenho direito de ingressar com uma ação trabalhista.\n\nAguardo seu retorno. Obrigado!",
 ) => `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`;
