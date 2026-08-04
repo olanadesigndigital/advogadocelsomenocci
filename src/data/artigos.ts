@@ -25,6 +25,7 @@ export const categorias = [
   "Verbas Trabalhistas",
   "Rescisão",
   "Horas Extras",
+  "Insalubridade",
   "Assédio",
   "Acidentes",
 ];
