@@ -118,12 +118,13 @@ function Publicacoes() {
             <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
               {lista.map((a) => (
                 <article key={a.slug} className="group flex flex-col border border-border">
-                  <img
+                  <Picture
                     src={a.imagem}
                     alt={a.titulo}
                     loading="lazy"
                     width={1200}
                     height={800}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="aspect-[3/2] w-full object-cover"
                   />
                   <div className="flex flex-1 flex-col p-7">

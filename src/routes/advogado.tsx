@@ -3,6 +3,7 @@ import { CalendarCheck } from "lucide-react";
 import advogado from "@/assets/advogado.jpg";
 import advogadoRetrato from "@/assets/advogado-retrato.jpg";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Picture } from "@/components/site/Picture";
 import { site, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/advogado")({
@@ -94,11 +95,12 @@ function Advogado() {
         <div className="container-page grid items-center gap-14 py-16 md:grid-cols-[0.9fr_1.1fr] md:py-24">
           <div className="relative order-2 md:order-1">
             <div className="absolute -bottom-4 -right-4 hidden h-full w-full border border-gold-soft md:block" />
-            <img
+            <Picture
               src={advogado}
               alt="Retrato profissional do Dr. Celso Menocci Junior"
               width={1016}
               height={2040}
+              sizes="(min-width: 768px) 42vw, 100vw"
               className="relative w-full object-cover"
             />
           </div>
@@ -175,12 +177,13 @@ function Advogado() {
             </ul>
             <div className="relative mt-10">
               <div className="absolute -bottom-3 -left-3 hidden h-full w-full border border-gold-soft md:block" />
-              <img
+              <Picture
                 src={advogadoRetrato}
                 alt="Dr. Celso Menocci Junior no escritório de advocacia em Jales"
                 width={1528}
                 height={2040}
                 loading="lazy"
+                sizes="(min-width: 768px) 45vw, 100vw"
                 className="relative aspect-[4/5] w-full object-cover"
               />
             </div>

@@ -13,6 +13,7 @@ import {
   CalendarCheck,
 } from "lucide-react";
 import escritorio from "@/assets/escritorio.jpg";
+import { Picture } from "@/components/site/Picture";
 import { site, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -115,11 +116,12 @@ function Home() {
           </div>
           <div className="relative">
             <div className="absolute -left-4 -top-4 hidden h-full w-full border border-gold-soft md:block" />
-            <img
+            <Picture
               src={escritorio}
               alt="Escritório de advocacia com ambiente sóbrio e acolhedor"
               width={2040}
               height={1530}
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="relative w-full object-cover"
             />
           </div>

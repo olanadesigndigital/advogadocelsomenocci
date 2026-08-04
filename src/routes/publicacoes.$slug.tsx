@@ -94,11 +94,12 @@ function ArtigoPage() {
         </header>
 
         <div className="container-page py-12">
-          <img
+          <Picture
             src={artigo.imagem}
             alt={artigo.titulo}
             width={1200}
             height={800}
+            sizes="(min-width: 1024px) 900px, 100vw"
             className="w-full object-cover"
           />
         </div>
