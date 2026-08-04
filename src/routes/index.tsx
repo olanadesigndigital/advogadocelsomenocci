@@ -118,8 +118,8 @@ function Home() {
             <img
               src={escritorio}
               alt="Escritório de advocacia com ambiente sóbrio e acolhedor"
-              width={680}
-              height={510}
+              width={2040}
+              height={1530}
               className="relative w-full object-cover"
             />
           </div>
