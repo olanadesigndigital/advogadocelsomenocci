@@ -1,6 +1,7 @@
 import horasExtras from "@/assets/artigo-horas-extras.jpg";
 import rescisao from "@/assets/artigo-rescisao.jpg";
 import gestante from "@/assets/artigo-gestante.jpg";
+import insalubridade from "@/assets/artigo-insalubridade.jpg";
 
 export type Secao = { id: string; titulo: string; paragrafos: string[]; citacao?: string };
 
