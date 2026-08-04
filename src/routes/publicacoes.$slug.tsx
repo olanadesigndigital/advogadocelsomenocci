@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Clock3, MessageCircle } from "lucide-react";
 import { artigos, getArtigo, type Artigo } from "@/data/artigos";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Picture } from "@/components/site/Picture";
 import { site, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/publicacoes/$slug")({
@@ -94,11 +95,12 @@ function ArtigoPage() {
         </header>
 
         <div className="container-page py-12">
-          <img
+          <Picture
             src={artigo.imagem}
             alt={artigo.titulo}
             width={1200}
             height={800}
+            sizes="(min-width: 1024px) 900px, 100vw"
             className="w-full object-cover"
           />
         </div>
