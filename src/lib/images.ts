@@ -1,4 +1,5 @@
 import { test as __t } from "@/lib/__imgtest";
+export const DEBUG_IMG = __t;
 /**
  * Otimização de imagens: gera variantes AVIF e WebP em múltiplas larguras
  * em tempo de build (vite-imagetools) e expõe os srcsets por nome de arquivo.
