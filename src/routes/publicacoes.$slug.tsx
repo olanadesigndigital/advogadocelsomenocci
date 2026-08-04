@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Clock3, MessageCircle } from "lucide-react";
 import { artigos, getArtigo, type Artigo } from "@/data/artigos";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Picture } from "@/components/site/Picture";
 import { site, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/publicacoes/$slug")({

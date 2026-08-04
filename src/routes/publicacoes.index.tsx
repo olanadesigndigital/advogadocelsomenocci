@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Search, ArrowRight, Clock3 } from "lucide-react";
 import { artigos, categorias } from "@/data/artigos";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Picture } from "@/components/site/Picture";
 
 export const Route = createFileRoute("/publicacoes/")({
   head: () => ({
