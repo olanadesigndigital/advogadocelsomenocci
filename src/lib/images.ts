@@ -1,3 +1,4 @@
+import { test as __t } from "@/lib/__imgtest";
 /**
  * Otimização de imagens: gera variantes AVIF e WebP em múltiplas larguras
  * em tempo de build (vite-imagetools) e expõe os srcsets por nome de arquivo.
