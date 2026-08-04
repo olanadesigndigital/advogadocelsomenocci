@@ -10,33 +10,80 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdvogadoRouteImport } from './routes/advogado'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PublicacoesIndexRouteImport } from './routes/publicacoes.index'
+import { Route as PublicacoesSlugRouteImport } from './routes/publicacoes.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoRoute = AdvogadoRouteImport.update({
+  id: '/advogado',
+  path: '/advogado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicacoesIndexRoute = PublicacoesIndexRouteImport.update({
+  id: '/publicacoes/',
+  path: '/publicacoes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicacoesSlugRoute = PublicacoesSlugRouteImport.update({
+  id: '/publicacoes/$slug',
+  path: '/publicacoes/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/advogado': typeof AdvogadoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/publicacoes/$slug': typeof PublicacoesSlugRoute
+  '/publicacoes/': typeof PublicacoesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/advogado': typeof AdvogadoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/publicacoes/$slug': typeof PublicacoesSlugRoute
+  '/publicacoes': typeof PublicacoesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/advogado': typeof AdvogadoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/publicacoes/$slug': typeof PublicacoesSlugRoute
+  '/publicacoes/': typeof PublicacoesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/advogado' | '/sitemap.xml' | '/publicacoes/$slug' | '/publicacoes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/advogado' | '/sitemap.xml' | '/publicacoes/$slug' | '/publicacoes'
+  id:
+    | '__root__'
+    | '/'
+    | '/advogado'
+    | '/sitemap.xml'
+    | '/publicacoes/$slug'
+    | '/publicacoes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdvogadoRoute: typeof AdvogadoRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  PublicacoesSlugRoute: typeof PublicacoesSlugRoute
+  PublicacoesIndexRoute: typeof PublicacoesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +95,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado': {
+      id: '/advogado'
+      path: '/advogado'
+      fullPath: '/advogado'
+      preLoaderRoute: typeof AdvogadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publicacoes/': {
+      id: '/publicacoes/'
+      path: '/publicacoes'
+      fullPath: '/publicacoes/'
+      preLoaderRoute: typeof PublicacoesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publicacoes/$slug': {
+      id: '/publicacoes/$slug'
+      path: '/publicacoes/$slug'
+      fullPath: '/publicacoes/$slug'
+      preLoaderRoute: typeof PublicacoesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdvogadoRoute: AdvogadoRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  PublicacoesSlugRoute: PublicacoesSlugRoute,
+  PublicacoesIndexRoute: PublicacoesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
