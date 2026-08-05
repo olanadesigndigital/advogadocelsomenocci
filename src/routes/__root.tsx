@@ -81,17 +81,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dr. Celso Menocci Junior | Advogado Trabalhista" },
+      { title: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior" },
       {
         name: "description",
         content:
-          "Advocacia especializada em Direito do Trabalho para trabalhadores e empresas em Jales e região.",
+          "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente.",
       },
       { name: "author", content: site.lawyer },
       { property: "og:site_name", content: site.office },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior" },
+      { name: "twitter:title", content: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior" },
+      { property: "og:description", content: "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente." },
+      { name: "twitter:description", content: "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a8cb68dc-b3d7-4d24-823e-f841fda72bf9/id-preview-79a1bca1--9477007e-7bf0-4999-b040-78ae4099871f.lovable.app-1785885332859.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a8cb68dc-b3d7-4d24-823e-f841fda72bf9/id-preview-79a1bca1--9477007e-7bf0-4999-b040-78ae4099871f.lovable.app-1785885332859.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

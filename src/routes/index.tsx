@@ -29,14 +29,14 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Atuação jurídica estratégica para trabalhadores e empresas, com soluções seguras e defesa dos seus direitos.",
+          "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:title", content: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior" },
       {
         name: "twitter:description",
-        content: "Direito do Trabalho para trabalhadores e empresas em Jales e região.",
+        content: "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
