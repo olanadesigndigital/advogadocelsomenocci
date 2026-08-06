@@ -17,17 +17,14 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         // Data da publicação mais recente — usada como lastmod do índice de publicações.
-        const ultimaPublicacao = artigos
-          .map((a) => a.data)
-          .sort()
-          .at(-1);
+        const ultimaPublicacao = artigos.map((a) => a.data).sort().at(-1) ?? "";
 
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "monthly", priority: "1.0" },
           { path: "/advogado", changefreq: "monthly", priority: "0.8" },
           {
             path: "/publicacoes",
-            lastmod: ultimaPublicacao,
+            ...(ultimaPublicacao ? { lastmod: ultimaPublicacao } : {}),
             changefreq: "weekly",
             priority: "0.9",
           },
