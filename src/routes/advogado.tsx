@@ -175,18 +175,6 @@ function Advogado() {
                 <li key={f} className="border-l border-gold pl-5">{f}</li>
               ))}
             </ul>
-            <div className="relative mt-10">
-              <div className="absolute -bottom-3 -left-3 hidden h-full w-full border border-gold-soft md:block" />
-              <Picture
-                src={advogadoRetrato}
-                alt="Dr. Celso Menocci Junior no escritório de advocacia em Jales"
-                width={1438}
-                height={1920}
-                loading="lazy"
-                sizes="(min-width: 768px) 45vw, 100vw"
-                className="relative aspect-[4/5] w-full object-cover"
-              />
-            </div>
           </div>
 
           <div className="space-y-10">
