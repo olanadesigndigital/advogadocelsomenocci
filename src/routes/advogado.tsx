@@ -98,8 +98,8 @@ function Advogado() {
             <Picture
               src={advogado}
               alt="Retrato profissional do Dr. Celso Menocci Junior"
-              width={1016}
-              height={2040}
+              width={956}
+              height={1920}
               sizes="(min-width: 768px) 42vw, 100vw"
               className="relative w-full object-cover"
             />
@@ -180,8 +180,8 @@ function Advogado() {
               <Picture
                 src={advogadoRetrato}
                 alt="Dr. Celso Menocci Junior no escritório de advocacia em Jales"
-                width={1528}
-                height={2040}
+                width={1438}
+                height={1920}
                 loading="lazy"
                 sizes="(min-width: 768px) 45vw, 100vw"
                 className="relative aspect-[4/5] w-full object-cover"
