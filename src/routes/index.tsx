@@ -119,8 +119,8 @@ function Home() {
             <Picture
               src={escritorio}
               alt="Escritório de advocacia com ambiente sóbrio e acolhedor"
-              width={2040}
-              height={1530}
+              width={1448}
+              height={1086}
               sizes="(min-width: 768px) 50vw, 100vw"
               className="relative w-full object-cover"
             />
