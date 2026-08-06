@@ -4,7 +4,7 @@ import advogado from "@/assets/advogado.jpg";
 import advogadoRetrato from "@/assets/advogado-retrato.jpg";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { Picture } from "@/components/site/Picture";
-import { site, whatsappLink } from "@/lib/site";
+import { absUrl, site, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/advogado")({
   head: () => ({
@@ -21,14 +21,14 @@ export const Route = createFileRoute("/advogado")({
         content: "Trajetória, formação e valores do advogado especialista em Direito do Trabalho.",
       },
       { property: "og:type", content: "profile" },
-      { property: "og:url", content: "/advogado" },
+      { property: "og:url", content: absUrl("/advogado") },
       { name: "twitter:title", content: "Dr. Celso Menocci Junior | Advogado Trabalhista" },
       {
         name: "twitter:description",
         content: "Trajetória, formação e valores do advogado especialista em Direito do Trabalho.",
       },
     ],
-    links: [{ rel: "canonical", href: "/advogado" }],
+    links: [{ rel: "canonical", href: absUrl("/advogado") }],
     scripts: [
       {
         type: "application/ld+json",
