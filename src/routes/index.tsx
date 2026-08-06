@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import escritorio from "@/assets/escritorio.jpg";
 import { Picture } from "@/components/site/Picture";
-import { site, whatsappLink } from "@/lib/site";
+import { absUrl, site, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,14 +32,14 @@ export const Route = createFileRoute("/")({
           "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: absUrl("/") },
       { name: "twitter:title", content: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior" },
       {
         name: "twitter:description",
         content: "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente.",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: absUrl("/") }],
   }),
   component: Home,
 });

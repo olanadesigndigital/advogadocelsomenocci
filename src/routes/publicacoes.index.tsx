@@ -1,3 +1,4 @@
+import { absUrl } from "@/lib/site";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search, ArrowRight, Clock3 } from "lucide-react";
@@ -20,14 +21,14 @@ export const Route = createFileRoute("/publicacoes/")({
         content: "Conteúdos sobre Direito do Trabalho para trabalhadores e empresas.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/publicacoes" },
+      { property: "og:url", content: absUrl("/publicacoes") },
       { name: "twitter:title", content: "Publicações Jurídicas | Dr. Celso Menocci Junior" },
       {
         name: "twitter:description",
         content: "Conteúdos sobre Direito do Trabalho para trabalhadores e empresas.",
       },
     ],
-    links: [{ rel: "canonical", href: "/publicacoes" }],
+    links: [{ rel: "canonical", href: absUrl("/publicacoes") }],
     scripts: [
       {
         type: "application/ld+json",

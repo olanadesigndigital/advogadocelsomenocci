@@ -3,7 +3,7 @@ import { Clock3, MessageCircle } from "lucide-react";
 import { artigos, getArtigo, type Artigo } from "@/data/artigos";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { Picture } from "@/components/site/Picture";
-import { site, whatsappLink } from "@/lib/site";
+import { absUrl, site, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/publicacoes/$slug")({
   loader: ({ params }) => {
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/publicacoes/$slug")({
       return { meta: [{ title: "Publicação indisponível" }, { name: "robots", content: "noindex" }] };
     }
     const { artigo } = loaderData;
-    const url = `/publicacoes/${params.slug}`;
+    const url = absUrl(`/publicacoes/${params.slug}`);
     return {
       meta: [
         { title: `${artigo.titulo} | ${site.lawyer}` },
@@ -26,6 +26,8 @@ export const Route = createFileRoute("/publicacoes/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         { property: "article:published_time", content: artigo.data },
+        { property: "article:modified_time", content: artigo.data },
+        { property: "article:section", content: artigo.categoria },
         { name: "twitter:title", content: artigo.titulo },
         { name: "twitter:description", content: artigo.resumo },
       ],
@@ -53,8 +55,8 @@ export const Route = createFileRoute("/publicacoes/$slug")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Escritório", item: "/" },
-              { "@type": "ListItem", position: 2, name: "Publicações", item: "/publicacoes" },
+              { "@type": "ListItem", position: 1, name: "Escritório", item: absUrl("/") },
+              { "@type": "ListItem", position: 2, name: "Publicações", item: absUrl("/publicacoes") },
               { "@type": "ListItem", position: 3, name: artigo.titulo, item: url },
             ],
           }),

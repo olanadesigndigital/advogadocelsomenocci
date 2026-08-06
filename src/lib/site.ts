@@ -13,3 +13,9 @@ export const site = {
 export const whatsappLink = (
   message = "Olá! Vim pelo seu site e gostaria de solicitar uma análise do meu caso trabalhista.\n\nSegue algumas informações iniciais:\n\n👤 Nome:\n🏢 Empresa:\n💼 Cargo/Função:\n📅 Período trabalhado:\n⚠️ Resumo da situação:\n\nGostaria de saber se tenho direito de ingressar com uma ação trabalhista.\n\nAguardo seu retorno. Obrigado!",
 ) => `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+/** URL pública do site — base para canonical, Open Graph e sitemap. */
+export const siteUrl = "https://advogadocelsomenocci.lovable.app";
+
+/** Converte um caminho interno em URL absoluta. */
+export const absUrl = (path: string) => `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
