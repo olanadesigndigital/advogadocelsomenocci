@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CalendarCheck } from "lucide-react";
 import advogado from "@/assets/advogado.jpg";
-import advogadoRetrato from "@/assets/advogado-retrato.jpg";
+
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { Picture } from "@/components/site/Picture";
 import { absUrl, site, whatsappLink } from "@/lib/site";
