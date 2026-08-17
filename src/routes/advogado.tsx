@@ -66,19 +66,25 @@ export const Route = createFileRoute("/advogado")({
 const formacao = [
   { titulo: "Graduação", itens: ["Bacharelado em Direito"] },
   { titulo: "Especializações", itens: ["Direito e Processo do Trabalho"] },
-  { titulo: "Cursos", itens: ["Atualização em Reforma Trabalhista", "Prática processual trabalhista"] },
-  { titulo: "Pós-graduações", itens: ["Espaço reservado para novos títulos"] },
+  {
+    titulo: "Cursos",
+    itens: ["Atualização em Reforma Trabalhista", "Prática processual trabalhista"],
+  },
+  {
+    titulo: "Pós-graduações",
+    itens: ["Pós-Graduação Lato Sensu em Carreira Trabalhista - ZZLMTED7"],
+  },
   { titulo: "Certificações", itens: ["Inscrição regular na OAB/SP"] },
 ];
 
-const linhaDoTempo = [
-  { ano: "2018", titulo: "Início da atuação profissional", texto: "Primeiros anos dedicados à prática forense e ao contato direto com clientes." },
-  { ano: "2020", titulo: "Especialização em Direito do Trabalho", texto: "Aprofundamento técnico na área que se tornaria o foco exclusivo da atuação." },
-  { ano: "2022", titulo: "Atuação em Jales e Região", texto: "Consolidação do atendimento presencial e on-line em toda a região." },
-  { ano: "Hoje", titulo: "Trabalhadores e empresas", texto: "Assessoria contenciosa e preventiva para os dois lados da relação de trabalho." },
+const valores = [
+  "Ética",
+  "Compromisso",
+  "Responsabilidade",
+  "Atualização",
+  "Respeito",
+  "Excelência",
 ];
-
-const valores = ["Ética", "Compromisso", "Responsabilidade", "Atualização", "Respeito", "Excelência"];
 
 const filosofia = [
   "Atendimento próximo, com escuta atenta a cada história.",
@@ -121,8 +127,8 @@ function Advogado() {
                 respostas claras em momentos delicados.
               </p>
               <p>
-                Atua com valores firmes: transparência sobre riscos e prazos, comunicação acessível e
-                compromisso com o resultado possível — não com promessas.
+                Atua com valores firmes: transparência sobre riscos e prazos, comunicação acessível
+                e compromisso com o resultado possível — não com promessas.
               </p>
             </div>
           </div>
@@ -139,7 +145,9 @@ function Advogado() {
                 <h3 className="text-lg">{f.titulo}</h3>
                 <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
                   {f.itens.map((i) => (
-                    <li key={i} className="border-l border-gold pl-4">{i}</li>
+                    <li key={i} className="border-l border-gold pl-4">
+                      {i}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -148,31 +156,15 @@ function Advogado() {
         </div>
       </section>
 
-      <section className="section border-b border-border">
-        <div className="container-page">
-          <p className="eyebrow">Experiência</p>
-          <h2 className="mt-5 text-3xl md:text-4xl">Linha do tempo</h2>
-          <ol className="mt-14 max-w-2xl border-l border-border">
-            {linhaDoTempo.map((e) => (
-              <li key={e.ano} className="relative pb-12 pl-8 last:pb-0">
-                <span className="absolute -left-[5px] top-1.5 size-2.5 rounded-full bg-gold" />
-                <span className="eyebrow">{e.ano}</span>
-                <h3 className="mt-2 text-lg">{e.titulo}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{e.texto}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <section className="section border-b border-border bg-secondary/50">
         <div className="container-page grid gap-14 md:grid-cols-2">
           <div>
-            <p className="eyebrow">Filosofia de trabalho</p>
             <h2 className="mt-5 text-3xl md:text-4xl">Como o escritório atende</h2>
             <ul className="mt-8 space-y-4 text-sm leading-relaxed text-muted-foreground">
               {filosofia.map((f) => (
-                <li key={f} className="border-l border-gold pl-5">{f}</li>
+                <li key={f} className="border-l border-gold pl-5">
+                  {f}
+                </li>
               ))}
             </ul>
           </div>
