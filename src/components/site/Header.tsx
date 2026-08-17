@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { whatsappLink, site } from "@/lib/site";
+import logo from "@/assets/logo-cm.png";
 
 const nav = [
   { to: "/", label: "Escritório" },
@@ -15,11 +16,14 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between md:h-20">
-        <Link to="/" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
-          <span className="font-[family-name:var(--font-display)] text-base tracking-wide md:text-lg">
-            {site.lawyer.replace("Dr. ", "")}
+        <Link to="/" className="flex items-center gap-3 leading-none" onClick={() => setOpen(false)}>
+          <img src={logo} alt="Monograma CM — Celso Menocci Junior" className="h-9 w-auto md:h-11" />
+          <span className="flex flex-col">
+            <span className="font-[family-name:var(--font-display)] text-base tracking-wide md:text-lg">
+              {site.lawyer.replace("Dr. ", "")}
+            </span>
+            <span className="eyebrow mt-1 text-[0.6rem]">Advocacia e Assessoria Jurídica · {site.oab}</span>
           </span>
-          <span className="eyebrow mt-1 text-[0.6rem]">Advocacia Trabalhista</span>
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex">

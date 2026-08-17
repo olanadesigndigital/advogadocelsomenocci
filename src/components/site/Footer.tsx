@@ -1,13 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 import { site, whatsappLink } from "@/lib/site";
+import logo from "@/assets/logo-cm.png";
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-secondary/60">
       <div className="container-page grid gap-12 py-16 md:grid-cols-3">
         <div>
-          <h3 className="text-xl">{site.lawyer}</h3>
+          <img src={logo} alt="Monograma CM — Celso Menocci Junior" className="h-12 w-auto" />
+          <h3 className="mt-4 text-xl">{site.lawyer}</h3>
+          <p className="mt-1 text-xs tracking-wide text-muted-foreground">{site.oab}</p>
           <span className="rule-gold mt-4" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Advocacia especializada em Direito do Trabalho, com atendimento a trabalhadores e
