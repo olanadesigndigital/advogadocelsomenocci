@@ -14,7 +14,7 @@ export function Footer() {
           <span className="rule-gold mt-4" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Advocacia especializada em Direito do Trabalho, com atendimento a trabalhadores e
-            empresas em {site.city} e região.
+            empresas presencialmente em {site.city} e todo o Brasil de forma online.
           </p>
           <div className="mt-6 flex flex-col gap-3 text-sm text-muted-foreground">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-foreground">

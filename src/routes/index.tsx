@@ -180,7 +180,9 @@ function Home() {
       <section className="border-b border-border">
         <div className="container-page grid items-center gap-14 py-20 md:grid-cols-2 md:py-28">
           <div>
-            <p className="eyebrow">Advocacia Trabalhista — {site.city}</p>
+            <p className="eyebrow">
+              Advocacia Trabalhista — presencialmente em {site.city} e Online para todo o Brasil
+            </p>
             <h1 className="mt-6 text-4xl leading-[1.1] md:text-5xl">
               {site.lawyer}
               <span className="mt-3 block text-lg text-muted-foreground md:text-xl">
