@@ -77,15 +77,6 @@ const formacao = [
   { titulo: "Certificações", itens: ["Inscrição regular na OAB/SP"] },
 ];
 
-const valores = [
-  "Ética",
-  "Compromisso",
-  "Responsabilidade",
-  "Atualização",
-  "Respeito",
-  "Excelência",
-];
-
 const filosofia = [
   "Atendimento próximo, com escuta atenta a cada história.",
   "Explicação clara, sem juridiquês desnecessário.",
@@ -184,20 +175,6 @@ function Advogado() {
                 e pela qualidade do atendimento prestado.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section border-b border-border">
-        <div className="container-page">
-          <p className="eyebrow">Valores</p>
-          <h2 className="mt-5 text-3xl md:text-4xl">Princípios que orientam a atuação</h2>
-          <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-            {valores.map((v) => (
-              <div key={v} className="bg-background p-10 text-center">
-                <span className="font-[family-name:var(--font-display)] text-xl">{v}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
