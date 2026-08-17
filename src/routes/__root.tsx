@@ -14,7 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
-import { site } from "@/lib/site";
+import { site, absUrl } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -96,8 +96,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior" },
       { property: "og:description", content: "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente." },
       { name: "twitter:description", content: "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a8cb68dc-b3d7-4d24-823e-f841fda72bf9/id-preview-79a1bca1--9477007e-7bf0-4999-b040-78ae4099871f.lovable.app-1785885332859.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a8cb68dc-b3d7-4d24-823e-f841fda72bf9/id-preview-79a1bca1--9477007e-7bf0-4999-b040-78ae4099871f.lovable.app-1785885332859.png" },
+      { property: "og:image", content: absUrl("/og-image.jpg") },
+      { name: "twitter:image", content: absUrl("/og-image.jpg") },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
