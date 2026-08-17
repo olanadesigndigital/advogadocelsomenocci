@@ -171,38 +171,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="section border-b border-border">
-        <div className="container-page grid gap-14 md:grid-cols-2">
-          <div>
-            <p className="eyebrow">Diferenciais</p>
-            <h2 className="mt-5 text-3xl md:text-4xl">Por que confiar o seu caso ao escritório</h2>
-            <span className="rule-gold mt-8" />
-          </div>
-          <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-            {diferenciais.map((d) => (
-              <li key={d} className="border-l border-gold pl-5 text-sm leading-relaxed">
-                {d}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section border-b border-border bg-secondary/50">
-        <div className="container-page">
-          <p className="eyebrow">Como funciona</p>
-          <h2 className="mt-5 text-3xl md:text-4xl">Um processo claro do começo ao fim</h2>
-          <div className="mt-14 grid gap-10 md:grid-cols-4">
-            {etapas.map((e) => (
-              <div key={e.n} className="border-t border-border pt-6">
-                <span className="font-[family-name:var(--font-display)] text-3xl text-gold">{e.n}</span>
-                <h3 className="mt-4 text-lg">{e.titulo}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.texto}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="section border-b border-border">
         <div className="container-page">
