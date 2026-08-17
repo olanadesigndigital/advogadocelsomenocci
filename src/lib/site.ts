@@ -1,5 +1,6 @@
 export const site = {
   lawyer: "Dr. Celso Menocci Junior",
+  oab: "OAB/SP nº 483.209",
   office: "Menocci Junior Advocacia",
   city: "Jales/SP",
   address: "R. Quatro, 2055 - Jardim Ana Cristina, Jales - SP, 15700-058",

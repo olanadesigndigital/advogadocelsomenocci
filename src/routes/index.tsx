@@ -55,21 +55,6 @@ const areas = [
   { icon: BookOpenCheck, titulo: "Consultoria Preventiva", texto: "Contratos, jornada e rotinas em conformidade com a lei." },
 ];
 
-const diferenciais = [
-  "Especialização em Direito do Trabalho",
-  "Atendimento Personalizado",
-  "Transparência",
-  "Comunicação Clara",
-  "Estratégia Individualizada",
-  "Atualização Jurídica Constante",
-];
-
-const etapas = [
-  { n: "01", titulo: "Contato", texto: "Você relata o caso pelo WhatsApp ou em consulta agendada." },
-  { n: "02", titulo: "Análise do Caso", texto: "Documentos e provas são estudados com atenção aos detalhes." },
-  { n: "03", titulo: "Estratégia Jurídica", texto: "Definimos o melhor caminho: acordo, ação ou solução preventiva." },
-  { n: "04", titulo: "Acompanhamento", texto: "Você recebe atualizações claras em cada fase do processo." },
-];
 
 const depoimentos = [
   { nome: "Ana Paula R.", texto: "Atendimento atencioso do início ao fim. Explicou cada etapa com clareza e resolveu meu caso." },
@@ -171,38 +156,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="section border-b border-border">
-        <div className="container-page grid gap-14 md:grid-cols-2">
-          <div>
-            <p className="eyebrow">Diferenciais</p>
-            <h2 className="mt-5 text-3xl md:text-4xl">Por que confiar o seu caso ao escritório</h2>
-            <span className="rule-gold mt-8" />
-          </div>
-          <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-            {diferenciais.map((d) => (
-              <li key={d} className="border-l border-gold pl-5 text-sm leading-relaxed">
-                {d}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section border-b border-border bg-secondary/50">
-        <div className="container-page">
-          <p className="eyebrow">Como funciona</p>
-          <h2 className="mt-5 text-3xl md:text-4xl">Um processo claro do começo ao fim</h2>
-          <div className="mt-14 grid gap-10 md:grid-cols-4">
-            {etapas.map((e) => (
-              <div key={e.n} className="border-t border-border pt-6">
-                <span className="font-[family-name:var(--font-display)] text-3xl text-gold">{e.n}</span>
-                <h3 className="mt-4 text-lg">{e.titulo}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.texto}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="section border-b border-border">
         <div className="container-page">
@@ -232,7 +185,7 @@ function Home() {
 
       <section className="section bg-primary text-primary-foreground">
         <div className="container-page text-center">
-          <h2 className="text-3xl md:text-4xl">Precisa de orientação jurídica?</h2>
+          <h2 className="text-3xl md:text-4xl">Precisa de Atendimento?</h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed opacity-80">
             Explique sua situação e receba uma análise inicial do seu caso com clareza e sem
             compromisso.
