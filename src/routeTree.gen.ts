@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdvogadoRouteImport } from './routes/advogado'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ApiReviewsRouteImport } from './routes/api.reviews'
 import { Route as PublicacoesIndexRouteImport } from './routes/publicacoes.index'
 import { Route as PublicacoesSlugRouteImport } from './routes/publicacoes.$slug'
 
@@ -30,6 +31,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiReviewsRoute = ApiReviewsRouteImport.update({
+  id: '/api/reviews',
+  path: '/api/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PublicacoesIndexRoute = PublicacoesIndexRouteImport.update({
   id: '/publicacoes/',
   path: '/publicacoes/',
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/advogado': typeof AdvogadoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/reviews': typeof ApiReviewsRoute
   '/publicacoes/$slug': typeof PublicacoesSlugRoute
   '/publicacoes/': typeof PublicacoesIndexRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/advogado': typeof AdvogadoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/reviews': typeof ApiReviewsRoute
   '/publicacoes/$slug': typeof PublicacoesSlugRoute
   '/publicacoes': typeof PublicacoesIndexRoute
 }
@@ -60,20 +68,33 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/advogado': typeof AdvogadoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/reviews': typeof ApiReviewsRoute
   '/publicacoes/$slug': typeof PublicacoesSlugRoute
   '/publicacoes/': typeof PublicacoesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/advogado' | '/sitemap.xml' | '/publicacoes/$slug' | '/publicacoes/'
+    | '/'
+    | '/advogado'
+    | '/sitemap.xml'
+    | '/api/reviews'
+    | '/publicacoes/$slug'
+    | '/publicacoes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/advogado' | '/sitemap.xml' | '/publicacoes/$slug' | '/publicacoes'
+  to:
+    | '/'
+    | '/advogado'
+    | '/sitemap.xml'
+    | '/api/reviews'
+    | '/publicacoes/$slug'
+    | '/publicacoes'
   id:
     | '__root__'
     | '/'
     | '/advogado'
     | '/sitemap.xml'
+    | '/api/reviews'
     | '/publicacoes/$slug'
     | '/publicacoes/'
   fileRoutesById: FileRoutesById
@@ -82,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdvogadoRoute: typeof AdvogadoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiReviewsRoute: typeof ApiReviewsRoute
   PublicacoesSlugRoute: typeof PublicacoesSlugRoute
   PublicacoesIndexRoute: typeof PublicacoesIndexRoute
 }
@@ -109,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/reviews': {
+      id: '/api/reviews'
+      path: '/api/reviews'
+      fullPath: '/api/reviews'
+      preLoaderRoute: typeof ApiReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/publicacoes/': {
       id: '/publicacoes/'
       path: '/publicacoes'
@@ -130,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdvogadoRoute: AdvogadoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiReviewsRoute: ApiReviewsRoute,
   PublicacoesSlugRoute: PublicacoesSlugRoute,
   PublicacoesIndexRoute: PublicacoesIndexRoute,
 }

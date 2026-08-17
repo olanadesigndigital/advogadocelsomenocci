@@ -16,7 +16,7 @@ export const whatsappLink = (
 ) => `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`;
 
 /** URL pública do site — base para canonical, Open Graph e sitemap. */
-export const siteUrl = "https://advogadocelsomenocci.lovable.app";
+export const siteUrl = import.meta.env.VITE_SITE_URL ?? "https://advogadocelsomenocci.lovable.app";
 
 /** Converte um caminho interno em URL absoluta. */
 export const absUrl = (path: string) => `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;

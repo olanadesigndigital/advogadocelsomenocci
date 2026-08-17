@@ -15,6 +15,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { site, absUrl } from "@/lib/site";
+import { GOOGLE_RATING, GOOGLE_REVIEWS_URL, GOOGLE_REVIEW_COUNT } from "@/lib/reviews";
 
 function NotFoundComponent() {
   return (
@@ -93,9 +94,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior" },
-      { name: "twitter:title", content: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior" },
-      { property: "og:description", content: "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente." },
-      { name: "twitter:description", content: "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente." },
+      {
+        name: "twitter:title",
+        content: "Advogado Trabalhista em Jales | Dr. Celso Menocci Junior",
+      },
+      {
+        property: "og:description",
+        content:
+          "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Escritório especializado em Direito do Trabalho em Jales/SP. Atuação estratégica para trabalhadores e empresas, com atendimento personalizado e transparente.",
+      },
       { property: "og:image", content: absUrl("/og-image.jpg") },
       { name: "twitter:image", content: absUrl("/og-image.jpg") },
     ],
@@ -132,6 +144,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             name: site.lawyer,
             jobTitle: "Advogado especialista em Direito do Trabalho",
           },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: GOOGLE_RATING,
+            bestRating: 5,
+            reviewCount: GOOGLE_REVIEW_COUNT,
+          },
+          sameAs: GOOGLE_REVIEWS_URL,
         }),
       },
     ],
