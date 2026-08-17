@@ -55,21 +55,6 @@ const areas = [
   { icon: BookOpenCheck, titulo: "Consultoria Preventiva", texto: "Contratos, jornada e rotinas em conformidade com a lei." },
 ];
 
-const diferenciais = [
-  "Especialização em Direito do Trabalho",
-  "Atendimento Personalizado",
-  "Transparência",
-  "Comunicação Clara",
-  "Estratégia Individualizada",
-  "Atualização Jurídica Constante",
-];
-
-const etapas = [
-  { n: "01", titulo: "Contato", texto: "Você relata o caso pelo WhatsApp ou em consulta agendada." },
-  { n: "02", titulo: "Análise do Caso", texto: "Documentos e provas são estudados com atenção aos detalhes." },
-  { n: "03", titulo: "Estratégia Jurídica", texto: "Definimos o melhor caminho: acordo, ação ou solução preventiva." },
-  { n: "04", titulo: "Acompanhamento", texto: "Você recebe atualizações claras em cada fase do processo." },
-];
 
 const depoimentos = [
   { nome: "Ana Paula R.", texto: "Atendimento atencioso do início ao fim. Explicou cada etapa com clareza e resolveu meu caso." },
