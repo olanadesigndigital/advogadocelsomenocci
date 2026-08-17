@@ -185,7 +185,7 @@ function Home() {
 
       <section className="section bg-primary text-primary-foreground">
         <div className="container-page text-center">
-          <h2 className="text-3xl md:text-4xl">Precisa de orientação jurídica?</h2>
+          <h2 className="text-3xl md:text-4xl">Precisa de Atendimento?</h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed opacity-80">
             Explique sua situação e receba uma análise inicial do seu caso com clareza e sem
             compromisso.
