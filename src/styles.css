@@ -6,7 +6,7 @@
 
 /*
  * Design system — Menocci Junior Advocacia
- * Minimalista: branco predominante, preto #111111, dourado discreto #B08D57.
+ * Tema verde-petróleo (logo) com acento dourado.
  * Tipografia: Playfair Display (títulos) + Inter (textos).
  */
 
@@ -55,26 +55,26 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.21 0.022 195);
+  --background: oklch(0.985 0.008 194);
+  --foreground: oklch(0.24 0.035 195);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.21 0.022 195);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.21 0.022 195);
   --primary: oklch(0.37 0.055 194);
   --primary-foreground: oklch(0.99 0.005 190);
-  --secondary: oklch(0.972 0.008 194);
+  --secondary: oklch(0.955 0.016 194);
   --secondary-foreground: oklch(0.28 0.035 194);
-  --muted: oklch(0.968 0.009 194);
-  --muted-foreground: oklch(0.48 0.022 194);
+  --muted: oklch(0.955 0.016 194);
+  --muted-foreground: oklch(0.47 0.032 194);
   --accent: oklch(0.945 0.02 190);
   --accent-foreground: oklch(0.28 0.035 194);
   --gold: oklch(0.62 0.09 78);
   --gold-soft: oklch(0.9 0.045 84);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.905 0.014 194);
-  --input: oklch(0.905 0.014 194);
+  --border: oklch(0.885 0.022 194);
+  --input: oklch(0.885 0.022 194);
   --ring: oklch(0.37 0.055 194);
   --sidebar: oklch(0.99 0.004 194);
   --sidebar-foreground: oklch(0.21 0.022 195);
@@ -135,6 +135,12 @@
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: -0.01em;
+    color: var(--primary);
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
   }
 }
 
