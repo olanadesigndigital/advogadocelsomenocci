@@ -217,7 +217,7 @@ function Home() {
             <div className="absolute -left-4 -top-4 hidden h-full w-full border border-gold-soft md:block" />
             <Picture
               src={escritorio}
-              alt="Escritório de advocacia com ambiente sóbrio e acolhedor"
+              alt="Fachada do escritório Celso A. Menocci Junior Advogado em Jales/SP"
               width={1600}
               height={1199}
               sizes="(min-width: 768px) 50vw, 100vw"
