@@ -179,7 +179,7 @@ function Advogado() {
         </div>
       </section>
 
-      <section className="section bg-primary text-primary-foreground">
+      <section className="section border-y border-gold bg-white text-[#1a1a1a]">
         <div className="container-page text-center">
           <h2 className="text-3xl md:text-4xl">Agende sua consulta</h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed opacity-80">
@@ -189,7 +189,7 @@ function Advogado() {
             href={whatsappLink("Olá, Dr. Celso. Gostaria de agendar uma consulta.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center justify-center gap-2 bg-gold px-8 py-4 text-sm tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
+            className="mt-10 inline-flex items-center justify-center gap-2 bg-gold px-8 py-4 text-sm tracking-wide text-[#1a1a1a] transition-opacity hover:opacity-90"
           >
             <CalendarCheck className="size-4" strokeWidth={1.5} /> Agendar consulta
           </a>

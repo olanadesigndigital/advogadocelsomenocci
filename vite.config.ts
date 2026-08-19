@@ -15,5 +15,8 @@ export default defineConfig({
   },
   vite: {
     plugins: [imagetools()],
+    server: {
+      allowedHosts: [".monkeycode-ai.live"],
+    },
   },
 });
