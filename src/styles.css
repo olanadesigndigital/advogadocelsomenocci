@@ -138,6 +138,14 @@
     color: var(--primary);
   }
 
+  .bg-primary :is(h1, h2, h3, h4),
+  .bg-foreground :is(h1, h2, h3, h4),
+  [class*="text-primary-foreground"] :is(h1, h2, h3, h4),
+  :is(h1, h2, h3, h4)[class*="text-primary-foreground"],
+  :is(h1, h2, h3, h4)[class*="text-background"] {
+    color: inherit;
+  }
+
   ::selection {
     background: var(--primary);
     color: var(--primary-foreground);
