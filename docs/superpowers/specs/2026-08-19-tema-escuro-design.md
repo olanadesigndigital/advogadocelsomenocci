@@ -51,11 +51,10 @@ As seções CTA de `src/routes/index.tsx` e `src/routes/advogado.tsx` usam hoje
 - Texto escuro sobre fundo claro: usar `text-foreground` (no tema escuro o foreground é claro —
   por isso a CTA precisa de cores explícitas claras, não das variáveis de tema).
 
-Solução concreta: manter a seção com fundo claro fixo (ex.: `bg-white/95` no claro e no escuro,
-ou uma variável nova `--cta-bg`/`--cta-fg`), borda dourada `border-gold`, texto escuro fixo
-(`text-black`/`#1a1a1a`), botão `bg-gold text-black`.
-
-O botão `bg-gold` dentro da CTA permanece dourado.
+Solução concreta: usar cores fixas na CTA, independentes do tema — fundo `bg-white`,
+borda `border-gold`, texto `text-[#1a1a1a]`, subtítulo com `text-[#1a1a1a]/80`. O botão
+`bg-gold text-[#1a1a1a]` permanece dourado. Assim a CTA é sempre clara, com borda dourada
+e contraste garantido sobre o fundo escuro do site.
 
 ### 4. Sombra do WhatsApp float
 
