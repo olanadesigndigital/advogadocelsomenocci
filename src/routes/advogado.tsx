@@ -75,6 +75,7 @@ const formacao = [
     itens: ["Pós-Graduação Lato Sensu em Carreira Trabalhista - ZZLMTED7"],
   },
   { titulo: "Certificações", itens: ["Inscrição regular na OAB/SP"] },
+  { titulo: "Atuação", itens: ["Direito do Trabalho"] },
 ];
 
 function Advogado() {
