@@ -284,8 +284,6 @@ function Home() {
         </div>
       </section>
 
-      <ReviewsSection />
-
       <section className="section border-b border-border bg-secondary/50">
         <div className="container-page grid gap-14 md:grid-cols-2">
           <div>
@@ -317,6 +315,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <ReviewsSection />
 
       <section className="section border-y border-gold bg-white text-[#1a1a1a]">
         <div className="container-page text-center">
