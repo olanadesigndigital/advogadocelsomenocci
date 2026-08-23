@@ -93,6 +93,14 @@ const areas = [
   },
 ];
 
+const filosofia = [
+  "Atendimento próximo, com escuta atenta a cada história.",
+  "Explicação clara, sem juridiquês desnecessário.",
+  "Segurança jurídica em cada decisão tomada.",
+  "Soluções estratégicas, e não respostas prontas.",
+  "Ética como limite e como método.",
+];
+
 const fetchReviews = async (): Promise<ReviewsData> => {
   const res = await fetch("/api/reviews");
   if (!res.ok) throw new Error("Falha ao carregar avaliações");
@@ -277,6 +285,38 @@ function Home() {
       </section>
 
       <ReviewsSection />
+
+      <section className="section border-b border-border bg-secondary/50">
+        <div className="container-page grid gap-14 md:grid-cols-2">
+          <div>
+            <h2 className="mt-5 text-3xl md:text-4xl">Como o escritório atende</h2>
+            <ul className="mt-8 space-y-4 text-sm leading-relaxed text-muted-foreground">
+              {filosofia.map((f) => (
+                <li key={f} className="border-l border-gold pl-5">
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-10">
+            <div className="border border-border bg-background p-8">
+              <p className="eyebrow">Missão</p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                Defender direitos com técnica e humanidade, oferecendo segurança jurídica a
+                trabalhadores e empresas em cada etapa da relação de trabalho.
+              </p>
+            </div>
+            <div className="border border-border bg-background p-8">
+              <p className="eyebrow">Visão</p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                Ser referência regional em Direito do Trabalho, reconhecido pela clareza, pela ética
+                e pela qualidade do atendimento prestado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section border-y border-gold bg-white text-[#1a1a1a]">
         <div className="container-page text-center">
