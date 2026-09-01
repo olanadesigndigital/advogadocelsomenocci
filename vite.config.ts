@@ -19,8 +19,14 @@ export default defineConfig({
     ...(staticExport
       ? {
           // Gera index.html em cada rota + fallback SPA para as rotas dinâmicas.
-          spa: { enabled: true, prerender: { outputPath: "/index.html" } },
-          prerender: { enabled: true, crawlLinks: true, filter: ({ path }: { path: string }) => !path.startsWith("/api") },
+          // Shell SPA usado como fallback do .htaccess para rotas sem HTML próprio.
+          spa: { enabled: true, prerender: { outputPath: "/_spa.html" } },
+          prerender: {
+            enabled: true,
+            crawlLinks: true,
+            filter: ({ path }: { path: string }) => !path.startsWith("/api"),
+          },
+          pages: [{ path: "/sitemap.xml" }],
         }
       : {}),
   },
