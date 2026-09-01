@@ -24,7 +24,7 @@ export default defineConfig({
         }
       : {}),
   },
-  ...(staticExport ? { nitro: { preset: "static" as const } } : {}),
+  ...(staticExport ? { nitro: false as const } : {}),
   vite: {
     plugins: [imagetools()],
     server: {
