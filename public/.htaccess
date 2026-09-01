@@ -1,0 +1,81 @@
+# ============================================================
+#  Menocci Junior Advocacia — configuração Apache (Hostinger)
+#  Basta enviar todo o conteúdo desta pasta para public_html/
+# ============================================================
+
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Força HTTPS (ignora ambiente local)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} !^localhost [NC]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Remove a barra final (exceto raiz), mantendo URLs amigáveis canônicas
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # 1) Arquivo existente (JS, CSS, imagens, fontes) → serve direto
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -l
+  RewriteRule ^ - [L]
+
+  # 2) Página pré-renderizada: /advogado → /advogado/index.html
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*[^/])$ /$1/index.html [L]
+
+  # 3) Qualquer outra rota → shell SPA (evita 404 ao atualizar a página)
+  RewriteRule ^ /_spa.html [L]
+</IfModule>
+
+# Página de erro (caso o mod_rewrite esteja desativado)
+ErrorDocument 404 /_spa.html
+
+<IfModule mod_mime.c>
+  AddType application/javascript          .js .mjs
+  AddType text/css                        .css
+  AddType image/avif                      .avif
+  AddType image/webp                      .webp
+  AddType image/svg+xml                   .svg
+  AddType application/json                .json .webmanifest
+  AddType application/xml                 .xml
+  AddType font/woff                       .woff
+  AddType font/woff2                      .woff2
+  AddType image/x-icon                    .ico
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml font/woff font/woff2
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Assets com hash no nome: cache longo e imutável
+  <FilesMatch "\.(js|mjs|css|woff2?|avif|webp|jpe?g|png|gif|svg|ico)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # HTML sempre revalidado
+  <FilesMatch "\.html$">
+    ExpiresDefault "access plus 0 seconds"
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "DENY"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Bloqueia acesso a arquivos sensíveis eventualmente enviados por engano
+<FilesMatch "^(\.env.*|\.git.*|package(-lock)?\.json|bun\.lock|.*\.ts|.*\.tsx)$">
+  Require all denied
+</FilesMatch>
