@@ -102,10 +102,17 @@ const filosofia = [
 ];
 
 const fetchReviews = async (): Promise<ReviewsData> => {
-  const res = await fetch("/api/reviews");
-  if (!res.ok) throw new Error("Falha ao carregar avaliações");
-  return res.json();
+  // Em hospedagem estática (sem Node) a rota /api/reviews não existe:
+  // nesse caso usamos as avaliações fixas em vez de quebrar a seção.
+  try {
+    const res = await fetch("/api/reviews");
+    if (!res.ok) return FALLBACK_REVIEWS_DATA;
+    return (await res.json()) as ReviewsData;
+  } catch {
+    return FALLBACK_REVIEWS_DATA;
+  }
 };
+
 
 function ReviewsSection() {
   const { data } = useQuery({
