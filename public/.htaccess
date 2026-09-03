@@ -28,12 +28,12 @@ DirectoryIndex index.html
   RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
   RewriteRule ^(.*[^/])$ /$1/index.html [L]
 
-  # 3) Qualquer outra rota → shell SPA (evita 404 ao atualizar a página)
-  RewriteRule ^ /_spa.html [L]
+  # 3) Qualquer outra rota → index.html (fallback; no caso de rotas client-side)
+  RewriteRule ^ /index.html [L]
 </IfModule>
 
 # Página de erro (caso o mod_rewrite esteja desativado)
-ErrorDocument 404 /_spa.html
+ErrorDocument 404 /index.html
 
 <IfModule mod_mime.c>
   AddType application/javascript          .js .mjs

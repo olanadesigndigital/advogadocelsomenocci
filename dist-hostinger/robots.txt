@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://advogadocelsomenocci.lovable.app/sitemap.xml
+Sitemap: https://celsomenocciadvocacia.com.br/sitemap.xml

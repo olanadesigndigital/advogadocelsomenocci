@@ -29,7 +29,7 @@ if (!existsSync(from)) {
 rmSync(to, { recursive: true, force: true });
 cpSync(from, to, { recursive: true });
 
-const required = ["index.html", "_spa.html", ".htaccess"];
+const required = ["index.html", ".htaccess", "robots.txt", "sitemap.xml"];
 const missing = required.filter((f) => !existsSync(join(to, f)));
 if (missing.length) {
   console.error(`[static] Arquivos obrigatórios ausentes: ${missing.join(", ")}`);
