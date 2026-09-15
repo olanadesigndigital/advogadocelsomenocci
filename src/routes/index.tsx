@@ -102,18 +102,22 @@ const filosofia = [
 ];
 
 const fetchReviews = async (): Promise<ReviewsData> => {
-  // Em hospedagem estática (sem Node) a rota /api/reviews não existe:
-  // nesse caso usamos as avaliações fixas em vez de quebrar a seção.
-  try {
-    const res = await fetch("/api/reviews", { headers: { accept: "application/json" } });
-    if (!res.ok) return FALLBACK_REVIEWS_DATA;
-    // O fallback do Apache pode devolver index.html com status 200: só aceitamos JSON real.
-    const contentType = res.headers.get("content-type") ?? "";
-    if (!contentType.includes("application/json")) return FALLBACK_REVIEWS_DATA;
-    return (await res.json()) as ReviewsData;
-  } catch {
-    return FALLBACK_REVIEWS_DATA;
+  // 1) Hospedagem com Node: rota /api/reviews (dados ao vivo, com cache).
+  // 2) Hospedagem estática (Hostinger): /reviews.json gerado no build.
+  // 3) Sem nenhum dos dois: avaliações fixas do código.
+  for (const endpoint of ["/api/reviews", "/reviews.json"]) {
+    try {
+      const res = await fetch(endpoint, { headers: { accept: "application/json" } });
+      if (!res.ok) continue;
+      const contentType = res.headers.get("content-type") ?? "";
+      // O Apache pode devolver index.html com status 200: só aceitamos JSON real.
+      if (!contentType.includes("application/json")) continue;
+      return (await res.json()) as ReviewsData;
+    } catch {
+      // tenta o próximo endpoint
+    }
   }
+  return FALLBACK_REVIEWS_DATA;
 };
 
 function ReviewsSection() {
