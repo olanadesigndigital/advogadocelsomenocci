@@ -88,8 +88,8 @@ function Advogado() {
             <Picture
               src={advogado}
               alt="Retrato profissional do Dr. Celso Menocci Junior"
-              width={956}
-              height={1920}
+              width={1086}
+              height={1448}
               sizes="(min-width: 768px) 42vw, 100vw"
               className="relative w-full object-cover"
             />
