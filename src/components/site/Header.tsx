@@ -13,16 +13,33 @@ const nav = [
 export function Header() {
   const [open, setOpen] = useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between md:h-20">
-        <Link to="/" className="flex items-center gap-3 leading-none" onClick={() => setOpen(false)}>
-          <img src={logo} alt="Monograma CM — Celso Menocci Junior" className="h-9 w-auto md:h-11" />
+        <Link
+          to="/"
+          className="flex items-center gap-3 leading-none"
+          onClick={() => {
+            setOpen(false);
+            scrollToTop();
+          }}
+        >
+          <img
+            src={logo}
+            alt="Monograma CM — Celso Menocci Junior"
+            className="h-9 w-auto md:h-11"
+          />
           <span className="flex flex-col">
             <span className="font-[family-name:var(--font-display)] text-base tracking-wide md:text-lg">
               {site.lawyer.replace("Dr. ", "")}
             </span>
-            <span className="eyebrow mt-1 text-[0.6rem]">Advocacia e Assessoria Jurídica · {site.oab}</span>
+            <span className="eyebrow mt-1 text-[0.6rem]">
+              Advocacia e Assessoria Jurídica · {site.oab}
+            </span>
           </span>
         </Link>
 
@@ -35,6 +52,7 @@ export function Header() {
               activeProps={{ className: "text-foreground" }}
               inactiveProps={{ className: "text-muted-foreground" }}
               className="text-sm transition-colors hover:text-foreground"
+              onClick={scrollToTop}
             >
               {item.label}
             </Link>
@@ -56,7 +74,11 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           className="md:hidden"
         >
-          {open ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
+          {open ? (
+            <X className="size-6" strokeWidth={1.5} />
+          ) : (
+            <Menu className="size-6" strokeWidth={1.5} />
+          )}
         </button>
       </div>
 
@@ -67,7 +89,10 @@ export function Header() {
               <Link
                 key={item.to}
                 to={item.to}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false);
+                  scrollToTop();
+                }}
                 className="py-3 text-sm text-muted-foreground"
                 activeProps={{ className: "text-foreground" }}
                 activeOptions={{ exact: item.to === "/" }}
