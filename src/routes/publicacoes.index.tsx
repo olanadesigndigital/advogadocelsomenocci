@@ -72,8 +72,8 @@ function Publicacoes() {
           <h1 className="mt-5 max-w-3xl text-4xl md:text-5xl">Publicações Jurídicas</h1>
           <span className="rule-gold mt-8" />
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Conteúdos produzidos pelo Dr. Celso Menocci Junior sobre Direito do Trabalho, escritos em
-            linguagem acessível para quem precisa entender seus direitos e deveres.
+            Conteúdos produzidos pelo Dr. Celso Menocci Junior sobre Direito do Trabalho, escritos
+            em linguagem acessível para quem precisa entender seus direitos e deveres.
           </p>
         </div>
       </section>
@@ -81,7 +81,10 @@ function Publicacoes() {
       <section className="border-b border-border bg-secondary/50">
         <div className="container-page py-10">
           <label className="relative block max-w-xl">
-            <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" strokeWidth={1.5} />
+            <Search
+              className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+              strokeWidth={1.5}
+            />
             <input
               type="search"
               value={busca}
@@ -120,15 +123,22 @@ function Publicacoes() {
             <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
               {lista.map((a) => (
                 <article key={a.slug} className="group flex flex-col border border-border">
-                  <Picture
-                    src={a.imagem}
-                    alt={a.titulo}
-                    loading="lazy"
-                    width={1200}
-                    height={800}
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="aspect-[3/2] w-full object-cover"
-                  />
+                  <Link
+                    to="/publicacoes/$slug"
+                    params={{ slug: a.slug }}
+                    aria-label={`Ler artigo: ${a.titulo}`}
+                    className="block overflow-hidden"
+                  >
+                    <Picture
+                      src={a.imagem}
+                      alt={a.titulo}
+                      loading="lazy"
+                      width={1200}
+                      height={800}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="aspect-[3/2] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </Link>
                   <div className="flex flex-1 flex-col p-7">
                     <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                       <span className="text-gold">{a.categoria}</span>
@@ -139,14 +149,19 @@ function Publicacoes() {
                       </span>
                     </div>
                     <h2 className="mt-4 text-xl leading-snug">{a.titulo}</h2>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{a.resumo}</p>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {a.resumo}
+                    </p>
                     <Link
                       to="/publicacoes/$slug"
                       params={{ slug: a.slug }}
                       className="mt-6 inline-flex items-center gap-2 text-sm text-gold"
                     >
                       Ler artigo
-                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
+                      <ArrowRight
+                        className="size-4 transition-transform group-hover:translate-x-1"
+                        strokeWidth={1.5}
+                      />
                     </Link>
                   </div>
                 </article>

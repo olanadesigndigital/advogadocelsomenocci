@@ -105,14 +105,16 @@ const fetchReviews = async (): Promise<ReviewsData> => {
   // Em hospedagem estática (sem Node) a rota /api/reviews não existe:
   // nesse caso usamos as avaliações fixas em vez de quebrar a seção.
   try {
-    const res = await fetch("/api/reviews");
+    const res = await fetch("/api/reviews", { headers: { accept: "application/json" } });
     if (!res.ok) return FALLBACK_REVIEWS_DATA;
+    // O fallback do Apache pode devolver index.html com status 200: só aceitamos JSON real.
+    const contentType = res.headers.get("content-type") ?? "";
+    if (!contentType.includes("application/json")) return FALLBACK_REVIEWS_DATA;
     return (await res.json()) as ReviewsData;
   } catch {
     return FALLBACK_REVIEWS_DATA;
   }
 };
-
 
 function ReviewsSection() {
   const { data } = useQuery({
