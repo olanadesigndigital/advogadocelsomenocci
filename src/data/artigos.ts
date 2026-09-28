@@ -2,6 +2,7 @@ import horasExtras from "@/assets/artigo-horas-extras.jpg";
 import rescisao from "@/assets/artigo-rescisao.jpg";
 import gestante from "@/assets/artigo-gestante.jpg";
 import insalubridade from "@/assets/artigo-insalubridade.jpg";
+import reversaoJustaCausa from "@/assets/artigo-reversao-justa-causa.jpg";
 
 export type Secao = { id: string; titulo: string; paragrafos: string[]; citacao?: string };
 
@@ -31,6 +32,120 @@ export const categorias = [
 ];
 
 export const artigos: Artigo[] = [
+  {
+    slug: "reversao-da-justa-causa",
+    titulo: "Reversão da justa causa: quando a demissão pode ser questionada na Justiça?",
+    resumo:
+      "Entenda em quais situações a justa causa pode ser questionada, quem deve provar a falta grave e quais direitos podem ser reconhecidos após a reversão.",
+    categoria: "Rescisão",
+    data: "2026-09-28",
+    dataLabel: "28 de setembro de 2026",
+    leitura: 12,
+    imagem: reversaoJustaCausa,
+    secoes: [
+      {
+        id: "introducao",
+        titulo: "O que significa reverter uma justa causa?",
+        paragrafos: [
+          "A dispensa por justa causa é uma das medidas mais severas que podem ser aplicadas ao trabalhador. Ela decorre da atribuição de uma falta grave e restringe diversas verbas normalmente devidas na dispensa sem justa causa.",
+          "A acusação feita pelo empregador, por si só, não significa que a penalidade esteja juridicamente comprovada. Na reclamação trabalhista, documentos, testemunhas e outros elementos de prova podem ser analisados pela Justiça do Trabalho.",
+          "A reversão ocorre quando o trabalhador questiona a penalidade e busca demonstrar que a falta grave não foi comprovada, não tinha gravidade suficiente ou não preenchia os requisitos necessários. O resultado sempre depende das circunstâncias e das provas de cada caso.",
+        ],
+        citacao:
+          "A existência de uma justa causa registrada não significa, por si só, que a penalidade será necessariamente mantida ou revertida.",
+      },
+      {
+        id: "justa-causa",
+        titulo: "O que é a justa causa?",
+        paragrafos: [
+          "A justa causa é uma modalidade de extinção do contrato de trabalho decorrente de falta grave praticada pelo empregado. As principais hipóteses estão no artigo 482 da CLT, como improbidade, mau procedimento, desídia, embriaguez em serviço, violação de segredo, indisciplina, insubordinação, abandono de emprego e atos lesivos à honra.",
+          "Por representar a penalidade máxima dentro do poder disciplinar do empregador, ela não deve ser aplicada automaticamente ou com base em meras suspeitas. A discussão judicial costuma verificar se o fato realmente ocorreu e se possui gravidade suficiente para justificar a ruptura motivada.",
+          "O princípio da continuidade da relação de emprego também é relevante. A Súmula 212 do Tribunal Superior do Trabalho reconhece presunção favorável à continuidade do vínculo em controvérsias sobre a ruptura contratual.",
+        ],
+      },
+      {
+        id: "quando-reverter",
+        titulo: "Quando a justa causa pode ser revertida?",
+        paragrafos: [
+          "A penalidade pode ser questionada quando existirem dúvidas sobre a ocorrência da falta, sua autoria, gravidade ou o cumprimento dos requisitos necessários. Isso pode acontecer quando a empresa não prova adequadamente o fato, a punição é desproporcional, há demora injustificada para aplicá-la ou o trabalhador já foi punido pelo mesmo episódio.",
+          "A análise considera elementos como previsão legal da conduta, autoria, dolo ou culpa quando pertinentes, nexo causal, proporcionalidade, imediatidade, ausência de perdão tácito e singularidade da punição.",
+          "Nem toda justa causa será revertida. Se a empresa comprovar uma falta grave capaz de justificar a dispensa e demonstrar o atendimento dos requisitos legais, a penalidade poderá ser mantida.",
+        ],
+      },
+      {
+        id: "requisitos",
+        titulo: "Quais requisitos devem ser observados?",
+        paragrafos: [
+          "A conduta precisa ser suficientemente grave e estar enquadrada em uma hipótese legal, especialmente entre aquelas previstas no artigo 482 da CLT. Não basta que o empregador considere uma atitude inconveniente.",
+          "A penalidade também deve ser proporcional. Conforme as circunstâncias, uma advertência ou suspensão pode ser suficiente, enquanto a dispensa imediata pode ser considerada excessiva.",
+          "Em regra, deve haver imediatidade entre a ciência da falta e a punição, ressalvado o tempo necessário para apurar os fatos. Uma demora sem justificativa pode indicar perdão tácito. Também não se admite dupla punição pelo mesmo fato, princípio conhecido como non bis in idem.",
+          "Em faltas relacionadas à desídia, o histórico disciplinar e a gradação das penalidades podem ser relevantes. Autoria, nexo causal e as circunstâncias concretas também precisam ser avaliados.",
+        ],
+      },
+      {
+        id: "onus-da-prova",
+        titulo: "Quem deve provar a falta grave?",
+        paragrafos: [
+          "Em regra, cabe ao empregador demonstrar os fatos que fundamentaram a dispensa motivada. Esse entendimento considera as regras dos artigos 818 da CLT e 373, inciso II, do CPC e o impacto da justa causa sobre os direitos do trabalhador.",
+          "Isso não dispensa o trabalhador de produzir provas relacionadas às suas alegações. Dependendo da controvérsia, podem existir encargos probatórios sobre fatos específicos para ambas as partes.",
+          "Na prática, a decisão será formada a partir do conjunto de documentos, depoimentos e demais provas apresentadas no processo.",
+        ],
+      },
+      {
+        id: "situacoes-comuns",
+        titulo: "Situações que podem gerar discussão",
+        paragrafos: [
+          "Em casos de desídia, podem ser avaliadas a frequência das faltas, advertências, suspensões, histórico funcional e gradação das penalidades. Uma ocorrência isolada de menor gravidade pode suscitar discussão sobre proporcionalidade.",
+          "No abandono de emprego, examinam-se tanto a ausência quanto a intenção de não retornar. A Súmula 32 do TST usa o período de 30 dias como referência para o elemento objetivo, sem afastar a análise da intenção do trabalhador.",
+          "Acusações de improbidade exigem atenção especial à prova por sua gravidade. Em alegações de indisciplina ou insubordinação, é preciso verificar qual ordem foi dada, se era legítima, se foi descumprida e em quais circunstâncias.",
+          "Faltas injustificadas, discussões no ambiente de trabalho, uso inadequado de equipamentos e alegações de mau procedimento também dependem do contexto, do histórico funcional e das provas disponíveis.",
+        ],
+      },
+      {
+        id: "provas",
+        titulo: "Quais provas podem ajudar?",
+        paragrafos: [
+          "Advertências, suspensões, comunicações internas, avaliações funcionais, controles de jornada, documentos de ocorrência, e-mails, mensagens e registros corporativos podem ajudar a esclarecer o episódio.",
+          "Testemunhas que presenciaram os fatos também podem contribuir. Documentos que demonstrem histórico funcional positivo, ausência de punições anteriores ou procedimentos da empresa incompatíveis com a versão apresentada podem ser relevantes.",
+          "Toda prova deve ser analisada quanto à autenticidade, pertinência e forma de obtenção. Informações obtidas ilicitamente ou que violem a privacidade podem gerar questionamentos no processo.",
+        ],
+      },
+      {
+        id: "processo",
+        titulo: "Como funciona o processo?",
+        paragrafos: [
+          "O trabalhador normalmente apresenta uma reclamação à Justiça do Trabalho, relatando os fatos e formulando os pedidos. Podem ser discutidas a inexistência ou insuficiência da prova, a desproporcionalidade, a falta de imediatidade e a dupla punição.",
+          "A empresa apresenta sua defesa e as provas que sustentam a justa causa. Durante o processo, o juiz pode analisar documentos, mensagens, controles, advertências e depoimentos de testemunhas.",
+          "Após a produção das provas, o juiz decide se a penalidade deve ser mantida ou afastada. A decisão pode ser objeto dos recursos previstos na legislação processual trabalhista.",
+        ],
+      },
+      {
+        id: "direitos",
+        titulo: "Quais direitos podem ser reconhecidos após a reversão?",
+        paragrafos: [
+          "Se a justa causa for afastada e a ruptura reconhecida como dispensa sem justa causa, poderão ser discutidos aviso-prévio, décimo terceiro proporcional, férias vencidas e proporcionais com um terço, regularização do FGTS e multa de 40% sobre o fundo.",
+          "Também pode ser discutido o seguro-desemprego, desde que os requisitos legais sejam preenchidos. Outras parcelas, como diferenças salariais e horas extras, dependerão do contrato e dos pedidos apresentados.",
+          "A reversão não torna todas as verbas automaticamente devidas. É necessário verificar o período contratual, os valores já pagos e as particularidades do vínculo.",
+        ],
+      },
+      {
+        id: "prazo",
+        titulo: "Qual é o prazo para questionar?",
+        paragrafos: [
+          "Em regra, o trabalhador tem até dois anos após o término do contrato para ajuizar a reclamação trabalhista. Uma vez proposta a ação dentro desse período, a cobrança costuma ficar limitada aos créditos dos cinco anos anteriores ao ajuizamento, conforme o artigo 7º, inciso XXIX, da Constituição Federal.",
+          "Não é recomendável deixar a análise para o fim do prazo. Com o passar do tempo, documentos podem ser perdidos, testemunhas podem mudar de endereço e a recordação dos acontecimentos pode ficar menos precisa.",
+        ],
+      },
+      {
+        id: "conclusao",
+        titulo: "A análise deve ser individual",
+        paragrafos: [
+          "A reversão da justa causa pode ser discutida quando existem dúvidas sobre a falta grave, sua autoria, a proporcionalidade da punição, a imediatidade ou a suficiência das provas.",
+          "Cada situação exige a análise dos documentos, do histórico funcional e das circunstâncias concretas. Uma avaliação jurídica individualizada permite verificar se há fundamentos para questionar a penalidade e quais pedidos podem ser pertinentes.",
+        ],
+      },
+    ],
+  },
   {
     slug: "o-que-sao-horas-extras",
     titulo: "O que são horas extras e quando o trabalhador tem direito",
