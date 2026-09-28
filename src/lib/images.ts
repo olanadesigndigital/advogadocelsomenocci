@@ -23,6 +23,9 @@ import gestanteJpg from "@/assets/artigo-gestante.jpg?w=480;768;1024;1600&as=src
 import insalubridadeAvif from "@/assets/artigo-insalubridade.jpg?w=480;768;1024;1600&format=avif&as=srcset";
 import insalubridadeWebp from "@/assets/artigo-insalubridade.jpg?w=480;768;1024;1600&format=webp&as=srcset";
 import insalubridadeJpg from "@/assets/artigo-insalubridade.jpg?w=480;768;1024;1600&as=srcset";
+import reversaoJustaCausaAvif from "@/assets/artigo-reversao-justa-causa.jpg?w=480;768;1024;1536&format=avif&as=srcset";
+import reversaoJustaCausaWebp from "@/assets/artigo-reversao-justa-causa.jpg?w=480;768;1024;1536&format=webp&as=srcset";
+import reversaoJustaCausaJpg from "@/assets/artigo-reversao-justa-causa.jpg?w=480;768;1024;1536&as=srcset";
 
 type Variants = { avif: string; webp: string; fallback: string };
 
@@ -37,6 +40,11 @@ const registry: Record<string, Variants> = {
     avif: insalubridadeAvif,
     webp: insalubridadeWebp,
     fallback: insalubridadeJpg,
+  },
+  "artigo-reversao-justa-causa": {
+    avif: reversaoJustaCausaAvif,
+    webp: reversaoJustaCausaWebp,
+    fallback: reversaoJustaCausaJpg,
   },
 };
 
