@@ -11,11 +11,14 @@
  *   4. o conteúdo principal está no HTML (funciona mesmo sem JavaScript);
  *   5. as imagens das publicações abrem o respectivo artigo.
  */
-import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const dist = join(root, "dist-hostinger");
+const artigoSlugs = [
+  ...readFileSync(join(root, "src/data/artigos.ts"), "utf8").matchAll(/^\s*slug:\s*"([^"]+)"/gm),
+].map((match) => match[1]);
 
 if (!existsSync(dist)) {
   console.error("[check-static] Pasta dist-hostinger/ ausente. Rode: npm run build:static");
@@ -37,10 +40,7 @@ const pages = [
   "/",
   "/advogado",
   "/publicacoes",
-  "/publicacoes/o-que-sao-horas-extras",
-  "/publicacoes/como-funciona-a-rescisao",
-  "/publicacoes/estabilidade-da-gestante",
-  "/publicacoes/adicional-de-insalubridade",
+  ...artigoSlugs.map((slug) => `/publicacoes/${slug}`),
 ];
 
 /** Reproduz a lógica de reescrita do .htaccess para uma URL. */
